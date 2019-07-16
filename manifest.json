@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "hunter2",
+    "version": "1.0",
+    "description": "Enables simple passwords for users who want more robust end-results",
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "index.js"
+            ]
+        }
+    ],
+    "permissions": [
+        "storage"
+    ]
+}
