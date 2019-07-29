@@ -5,7 +5,8 @@
     "description": "Enables simple passwords for users who want more robust end-results",
     "background": {
         "scripts": [
-            "script/salt.js"
+            "script/salt.js",
+            "script/context.js"
         ]
     },
     "permissions": [
