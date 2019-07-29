@@ -1,15 +1,23 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
 .content{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: #781c2e;
+    margin: 0 auto;
+    background-color: #d1d1d1;
     padding: 20px;
-    width: 60%;
 }
 
-#display{
+.container {
+    margin: 0 auto;
+    padding: 0;
+}
+
+#user-input-field {
     width: 100%;
 }
 
-#slider{
-    width: 100%;
+#onefifth { 
+    margin-bottom: 10px;
 }
