@@ -3,18 +3,18 @@
     "name": "hunter2",
     "version": "1.0",
     "description": "Enables simple passwords for users who want more robust end-results",
-    "content_scripts": [
-        {
-            "matches": [
-                "http://*/*",
-                "https://*/*"
-            ],
-            "js": [
-                "index.js"
-            ]
-        }
-    ],
+    "background": {
+        "scripts": [
+            "script/salt.js"
+        ]
+    },
     "permissions": [
-        "storage"
-    ]
+        "storage",
+        "contextMenus"
+    ],
+    "applications": {
+        "gecko": {
+            "id": "rtg17@my.fsu.edu"
+        }
+    }
 }
