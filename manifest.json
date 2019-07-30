@@ -5,17 +5,21 @@
     "description": "Enables simple passwords for users who want more robust end-results",
     "background": {
         "scripts": [
-            "script/salt.js",
-            "script/context.js"
-        ]
+            "script/salt.js"
+            ]
     },
     "permissions": [
         "storage",
-        "contextMenus"
+        "contextMenus",
+		"activeTab"
     ],
     "applications": {
         "gecko": {
             "id": "rtg17@my.fsu.edu"
         }
-    }
+    },
+	 "browser_action": {
+   "default_icon": "icon.png",
+   "default_popup": "RMeditpopup.html"
+  }
 }

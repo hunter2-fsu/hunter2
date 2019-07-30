@@ -7,54 +7,9 @@
     <title>Hunter2 PW Generator</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Users/RichardMorrow/Desktop/School/Summer 2019 Semester/LIS4910/hunter2/styles/input-popout.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        var expanded = false;
-        function showCheckboxes() {
-          var checkboxes = document.getElementById("checkboxes");
-          if (!expanded) {
-            checkboxes.style.display = "block";
-            expanded = true;
-          } else {
-            checkboxes.style.display = "none";
-            expanded = false;
-          }
-        }
-        function getValue() {
-            
-            var myArray = [];
-            
-            document.querySelectorAll('.checks').forEach(function (input) {
-              if(input.type === 'checkbox' && input.checked) {
-                myArray.push(input.value);
-              }
-            });
-            var length = document.getElementById('textInput').value;
-              console.log(myArray);
-              console.log(length);
-        }
-        
-        function selectAll() {
-            document.querySelectorAll('.checks').forEach(function (input) {
-              if(input.type === 'checkbox') {
-                input.checked = true;
-              }
-            });
-        }
-    
-        function UnSelectAll() {
-            document.querySelectorAll('.checks').forEach(function (input) {
-              if(input.type === 'checkbox') {
-                input.checked = false;
-              }
-            });
-        }
-        
-        function updateTextInput(val) {
-          document.getElementById('textInput').value=val; 
-        }
-    </script>
+    <link rel="stylesheet" href="css/RMeditinput-popout.css">
+   
+    <script src="script\popup.js"></script>
 </head>
 <body>
     
@@ -70,7 +25,6 @@
 
               <div class="content">
                  <form action="/action_page.php">
-                  <h4>Hunter2 PW Generator</h4>
                   <br />
                   <input type="text" id="display">
                   <br />
@@ -81,22 +35,19 @@
                   <input type="text" id="display">
                   <br />
                   <p>Character Length Slider</p>
-                  <input type="range" min="0" max="50" name="slider" id="slider" onchange="updateTextInput(this.value);">
-                  <input type="text" id="textInput" value="">
+                  <input type="range" min="0" max="50" name="slider" id="slider">
+                  <input type="text" id="textInput">
                   <br />
                   
                   <form id="rule-form">
                     <div class="multiselect">
-                      <div class="selectBox" onclick="showCheckboxes();">
-                        <select>
-                          <option>Password Ruleset</option>
-                        </select>
-                        <div class="overSelect"></div>
+                      <div class="selectBox">
+                       <input type="button" id="passwordRulesetButton" value="Password Ruleset"></input>
                       </div>
                       <div id="checkboxes">
                         <p>
-                    <input type="button" onclick='selectAll()' value="Select All"/>
-                    <input type="button" onclick='UnSelectAll()' value="Unselect All"/>
+                    <input id="selectAll" type="button" value="Select All"/>
+                    <input id="unselectAll" type="button" value="Unselect All"/>
                         </p>
                         <label for="one">
                           <input type="checkbox" class="checks" value="~" /> ~</label>
@@ -163,7 +114,7 @@
                         
                       </div>
                     </div>
-                  <input type="button" onclick="getValue();" value="Get Values of Checked"></input>
+                  <input type="button" id="runButton" value="Get Values of Checked"></input>
                    </form>
                   <div id="length"></div>
               </div>  
