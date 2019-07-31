@@ -1,4 +1,4 @@
-function encode(inOne, inTwo, inThree) {
+function encode(inOne, inTwo, inThree, allowedSpecials = '@#*()-_+={};,./?~') {
   if (inOne === "" && inTwo === "" && inThree === "") {
     console.error('You need at least one term input');
     return;
@@ -11,12 +11,10 @@ function encode(inOne, inTwo, inThree) {
 
   console.log(concat);
   //create master lists
-
-  masterList = 'ABCDEFGHIJKLMNOPQ2345RSTUVWXYZabcde{};,./?~fghijklmnopqrstuvwxyz016789@#*()-_+='
-  masterUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  masterLower = 'abcdefghijklmnopqrstuvwxyz'
-  masterNumber = '0123456789'
-  masterSymbol = '@#*()-_+={};,./?~'
+  masterUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  masterLower = 'abcdefghijklmnopqrstuvwxyz';
+  masterNumber = '0123456789';
+  masterList = `${masterUpper}${masterLower}${masterNumber}${allowedSpecials}`;
 
   var hash = sha256(concat)
 
