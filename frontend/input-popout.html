@@ -1,57 +1,33 @@
 <!DOCTYPE html>
 <html lang='en'>
-<head>
-    <meta charset="UTF-8">
-    <meta name-"viewport" content="width=device-width, initial-scale1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hunter2 PW Generator</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/input-popout.css">
-
-
-</head>
-<body>
-    
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Hunter2 PW Generator</a>
-    </nav>
-
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-lg-8 col-sm-12 mx-auto">
-
-              <div class="content">
-                  <h4>Hunter2 PW Generator</h4>
-                  <br />
-                  <input type="text" id="display">
-                  <br />
-                  <br />
-                  <input type="text" id="display">
-                  <br />
-                  <br />
-                  <input type="text" id="display">
-                  <br />
-                  <input type="range" min="0" max="50" name="slider" id="slider">
-                  <br />
-                  <button onclick="">Run</button>
-                  
-                  <div id="length"></div>
-              </div>  
-
-              <div class="previous_passwords"></div>
-                    <b>Previously Generated Passwords</b>
-                    <br />
-                    <div id="lastNums"></div>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name-"viewport" content="width=device-width, initial-scale1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Hunter2 PW Generator</title>
+        
+        <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/input-popout.css">
+    </head>
+    <body>
+        <script src="js/js-sha256.js"></script>
+        <script src="js/encode.js"></script>
+        <nav id="onefifth" class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Hunter2 Password Generator</a>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-sm-12 mx-auto">
+                    <div class="content">
+                        <form name="userInput" id="input-fields" onsubmit="encode(document.forms['userInput']['termOne'].value, document.forms['userInput']['termTwo'].value, document.forms['userInput']['termThr'].value)" method="POST">
+                            <span class="inline-label">Term 1:</span> <input type="text" class="user-input-field" name="termOne"><br>
+                            <span class="inline-label">Term 2:</span> <input type="text" class="user-input-field" name="termTwo"><br>
+                            <span class="inline-label">Term 3:</span> <input type="text" class="user-input-field" name="termThr"><br>
+                            <input id="sub-btn" type="submit" value="Generate">
+                        </form>
+                    </div>
+                </div>
             </div>
-
         </div>
-
-
-    </div>
-
-</body>
+    </body>
 </html>

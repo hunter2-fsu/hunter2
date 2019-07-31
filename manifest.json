@@ -6,15 +6,20 @@
     "background": {
         "scripts": [
             "script/salt.js"
-        ]
+            ]
     },
     "permissions": [
         "storage",
-        "contextMenus"
+        "contextMenus",
+		"activeTab"
     ],
     "applications": {
         "gecko": {
             "id": "rtg17@my.fsu.edu"
         }
-    }
+    },
+	 "browser_action": {
+   "default_icon": "icon.png",
+   "default_popup": "frontend/input-popout.html"
+  }
 }
