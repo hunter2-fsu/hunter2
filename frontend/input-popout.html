@@ -4,14 +4,14 @@
         <meta charset="UTF-8">
         <meta name-"viewport" content="width=device-width, initial-scale1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com">
         <title>Hunter2 PW Generator</title>
         
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/input-popout.css">
     </head>
     <body>
-        <script src="js/submitInput.js" type="text/javscript"></script>
+        <script src="js/js-sha256.js"></script>
+        <script src="js/encode.js"></script>
         <nav id="onefifth" class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Hunter2 Password Generator</a>
         </nav>
@@ -19,10 +19,12 @@
             <div class="row">
                 <div class="col-lg-8 col-sm-12 mx-auto">
                     <div class="content">
-                        <input type="text" id="user-input-field">
-                        <br />
-                        <button onclick="submitInput()">Run</button>
-                        <div id="length"></div>
+                        <form name="userInput" id="input-fields" onsubmit="encode(document.forms['userInput']['termOne'].value, document.forms['userInput']['termTwo'].value, document.forms['userInput']['termThr'].value)" method="POST">
+                            <span class="inline-label">Term 1:</span> <input type="text" class="user-input-field" name="termOne"><br>
+                            <span class="inline-label">Term 2:</span> <input type="text" class="user-input-field" name="termTwo"><br>
+                            <span class="inline-label">Term 3:</span> <input type="text" class="user-input-field" name="termThr"><br>
+                            <input type="submit" value="Generate">
+                        </form>
                     </div>
                 </div>
             </div>
