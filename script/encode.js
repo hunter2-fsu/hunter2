@@ -60,18 +60,22 @@ for(var i=0; i<PWlength; i++){
     
   }
   if(tenBase[i]>=masterList.length){
-    picker = tenBase[i] % 3
+    picker = tenBase[i] % 7
     switch(picker){
-      case 0: pass = saltIn % masterUpper.length
+      case 0: pass = (saltIn + tenBase[i-1]) % masterUpper.length
         finalPass[i] = masterUpper[pass]
         break;
-      case 1: pass = saltIn % masterLower.length
+      case 1: pass = (saltIn + tenBase[i-1]) % masterLower.length
         finalPass[i] = masterLower[pass]
       break;
-      case 2: pass = saltIn % masterNumber.length
+      case 4:
+      case 6:
+      case 2: pass = (saltIn + tenBase[i-1]) % masterNumber.length
         finalPass[i]= masterNumber[pass]
       break;
-      case 3: pass = saltIn % masterSymbol.length
+      case 5:
+      case 7:
+      case 3: pass = (saltIn + tenBase[i-1]) % masterSymbol.length
         finalPass[i] = masterSymbol[pass]
       break;
     }
