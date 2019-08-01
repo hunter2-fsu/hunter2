@@ -70,7 +70,7 @@ function encode(inOne, inTwo, inThree, allowedSpecials = '@#*()-_+={};,./?~') {
       case 5:
       case 7:
         pass = (tempSalt + tenBase[i-1]) % masterSymbol.length
-        finalPass[i] = masterSymbol[pass]
+        finalPass[i] = allowedSpecials[pass]
         break;
     }
 }
