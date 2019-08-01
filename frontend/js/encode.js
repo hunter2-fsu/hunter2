@@ -9,7 +9,7 @@ function encode(inOne, inTwo, inThree, allowedSpecials = '@#*()-_+={};,./?~') {
   const tempSalt = 3706501850
   let concat = `${inOne}:${inTwo}:${inThree}:${tempSalt}`;
 
-  console.log(concat);
+  //console.log(concat);
   //create master lists
   masterUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   masterLower = 'abcdefghijklmnopqrstuvwxyz';
