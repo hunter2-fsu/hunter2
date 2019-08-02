@@ -22,4 +22,5 @@
    "default_icon": "icon.png",
    "default_popup": "frontend/input-popout.html"
   }
+	"content_security_policy":"script-src 'self' https://apis.google.com; object-src 'self'"
 }
